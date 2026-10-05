@@ -366,6 +366,58 @@ Projet réalisé dans le cadre du module :
 
 ---
 
-## 📄 Licence
+## 🚀 Mise à jour du projet
 
-Ce projet est réalisé dans un cadre académique et pédagogique.
+### Gateway
+
+#### 🔹 Gateway statique
+
+La Gateway permet de router les requêtes vers les différents microservices en utilisant des routes configurées directement avec les URLs des services.
+
+**Test avec Swagger / Gateway :**
+
+<img width="945" height="162" alt="image" src="https://github.com/user-attachments/assets/95080079-ea04-4f7d-bbda-a70f5e1bc164" />
+
+<img width="945" height="347" alt="image" src="https://github.com/user-attachments/assets/190afcc0-9b6f-42a8-bad4-3e693da12592" />
+
+
+#### 🔹 Gateway dynamique
+
+La Gateway peut également utiliser le service de découverte **Eureka** afin de retrouver dynamiquement les microservices disponibles.
+
+**Test de la Gateway dynamique :**
+
+<img width="945" height="347" alt="image" src="https://github.com/user-attachments/assets/cfb7540b-e1a0-4108-8558-43356958976e" />
+
+<img width="945" height="334" alt="image" src="https://github.com/user-attachments/assets/067d8b25-d0d9-460c-98c7-0c2ab603ef4c" />
+
+### 🔎 Discovery Service
+
+Le **Discovery Service** basé sur Eureka permet l'enregistrement et la découverte des microservices dans l'architecture.
+
+**Test du Discovery Service :**
+
+!<img width="945" height="430" alt="image" src="https://github.com/user-attachments/assets/2c1ecce7-e5eb-473d-956f-fe8b2329ceea" />
+
+
+### 🔗 Connexion entre les deux microservices
+
+Une communication a été mise en place entre les deux microservices :
+
+* **Customer Service**
+* **Ebank Service**
+
+La communication entre les services permet notamment à `Ebank Service` de récupérer les informations concernant les clients.
+
+**Tests de la communication entre les microservices :**
+<img width="945" height="336" alt="image" src="https://github.com/user-attachments/assets/1f595018-906d-4e04-b106-581ff72ccea6" />
+
+<img width="945" height="129" alt="image" src="https://github.com/user-attachments/assets/70e8e742-05f3-4dee-8c29-5740d360f067" />
+
+
+### 🛡️ Resilience4j
+
+**Resilience4j** a également été intégré afin d'améliorer la tolérance aux pannes et gérer les problèmes de communication entre les microservices.
+
+Le mécanisme permet notamment de gérer les situations où un microservice devient temporairement indisponible.
+
