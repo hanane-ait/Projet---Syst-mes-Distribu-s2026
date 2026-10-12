@@ -1,3 +1,4 @@
+
 package org.example.customerservice;
 
 import org.example.customerservice.entities.Customer;
@@ -17,17 +18,18 @@ public class CustomerServiceApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(CustomerService customerService){
+    CommandLineRunner commandLineRunner(CustomerService customerService) {
+        return args -> {
+            List<String> names = List.of("Mohammed", "Imane", "yassine");
 
-        return args-> {
-            List<String> names= List.of("Mohammed", "Imane" , "yassine");
-            names.forEach(name ->{
-                customerService.saveCustomer(Customer.builder()
-                                .name(name).email(name+ "@gmail.com")
-                        .build());
-                    }
-            );
+            names.forEach(name -> {
+                customerService.saveCustomer(
+                        Customer.builder()
+                                .name(name)
+                                .email(name + "@gmail.com")
+                                .build()
+                );
+            });
         };
     }
-
 }
